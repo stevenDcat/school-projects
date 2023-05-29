@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreApp.Pages.LoadSavePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="1*" /> <!--Search Bar-->
+                  <RowDefinition Height="10*" /> <!--List View-->
+                </Grid.RowDefinitions>
+
+              <Grid Grid.Row="0" ColumnSpacing="1" Margin="5" BackgroundColor="LightGray"> <!--Search Bar-->
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="10*" />
+                      <ColumnDefinition Width="4*" />
+                  </Grid.ColumnDefinitions>
+                  <Entry Grid.Column="0" Placeholder="Search products" Text="{Binding SaveQuery}"></Entry>
+                  <Button Grid.Column="1" Text="Search" Clicked="Search" ></Button>
+              </Grid>
+              
+              <Grid Grid.Row="1" >
+                  <ListView Header="Carts Saved"  ItemsSource="{Binding SaveFiles}"  SelectedItem="{Binding SelectedFile }">
+                      <ListView.ItemTemplate>
+                          <DataTemplate>
+                              <ViewCell>
+                                 <Label Text="{Binding }"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                                        TextColor="Black"  FontSize="Medium" ></Label>
+                              </ViewCell>
+                          </DataTemplate>
+                      </ListView.ItemTemplate>
+                  </ListView>
+                  
+              </Grid>
+            </Grid>
+            <Button Text="Save" Clicked="Clicked_Save" />
+            <Button Text="Load" Clicked="Clicked_Load" />
+            <Button Text="Delete" Clicked="Clicked_Delete" />
+            <Button Text="Back" Clicked="Clicked_Back" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

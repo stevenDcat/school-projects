@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreApp.Pages.SaveDialog">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="File Name" Text="{Binding Filename}"></Entry>
+            <Button Text="Save" Clicked="Clicked_Save" />
+            <Button Text="Cancel" Clicked="Clicked_Cancel" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

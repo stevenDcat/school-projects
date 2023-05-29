@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreApp.Pages.ByQuantityDialog">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0" x:Name="BoGoRow">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="BoGo:" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black"></Label>
+                    <Label Grid.Column="1" Text="YES:" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black"></Label>
+                    <CheckBox Grid.Column="2" x:Name="BoGoYes" CheckedChanged="BoGo_Yes"></CheckBox>
+                    <Label Grid.Column="3" Text="NO:" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black"></Label>
+                    <CheckBox Grid.Column="4" x:Name="BoGoNo" CheckedChanged="BoGo_No"></CheckBox>
+                   
+                </Grid>
+                
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Name:" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black"></Label>
+                    <Entry Grid.Column="1" x:Name="NameEntry" Placeholder="Name" Text="{Binding Name}" />
+                </Grid>
+                
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Description:" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black"></Label>
+                    <Entry Grid.Column="1" x:Name="DescriptionEntry" Placeholder="Description" Text="{Binding Description}" />
+                </Grid>
+                
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Quantity:" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black"/>
+                    <Entry Grid.Column="1" x:Name="QuantityEntry" Text="{Binding Quantity}" />
+                </Grid>
+                
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Price:" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black"></Label>
+                    <Entry Grid.Column="1" x:Name="PriceEntry" Text="{Binding Price}" />
+                </Grid>
+                
+                <Grid Grid.Row="5" x:Name="Row5" IsEnabled="False" IsVisible="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Amount to Add:" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black"/>
+                    <Entry Grid.Column="1" x:Name="StepperEntry" Text="{Binding Source={x:Reference Stepper},Path=Value}" IsEnabled="False" />
+                    <Stepper Grid.Column="2" x:Name="Stepper" Increment="1"  Minimum="0" />
+                </Grid>
+                
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="Save"  Clicked="Ok_Clicked" />
+                    <Button Grid.Column="1" Text="Cancel" Clicked="Cancel_Clicked" />
+                </Grid>
+                
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

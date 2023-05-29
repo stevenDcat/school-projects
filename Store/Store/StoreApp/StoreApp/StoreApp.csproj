@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DebugType>pdbonly</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Remove="ViewModels\" />
+        <None Remove="Pages\" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="ViewModels\" />
+        <Folder Include="Pages\" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\ProductLibrary\ProductLibrary.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="ViewModels\ProductViewModel.cs" />
+    </ItemGroup>
+</Project>

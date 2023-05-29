@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreApp.Pages.CustomerPage">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition /> <!--Search Bar-->
+                <RowDefinition Height="10*" /> <!--List View-->
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="5" BackgroundColor="LightGray"> <!--Search Bar-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" Placeholder="Search product" Text="{Binding Query}" FontSize="Default" />
+                <Button Grid.Column="1" Text="Search" Clicked="Search" />
+                <Button Grid.Column="2" Text="Filter" Clicked="Filter" />
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="5"> <!--List -->
+                <ListView Header="INVENTORY" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate >
+                            <ViewCell>
+                               <Label Text="{Binding}" TextColor="Black" FontAttributes="Italic"></Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
+
+        <!--Buttons-->
+        <Button Text="Add to Cart" Clicked="Clicked_Add" />
+        <Button Text="Go to Cart" Clicked="Clicked_GoToCart" />
+        <Button Text="Logout" Clicked="Clicked_Logout" />
+
+    </StackLayout>
+</ContentPage>

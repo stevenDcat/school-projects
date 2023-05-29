@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StoreApp.Pages.EmployeePage">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" /> <!--Search Bar-->
+                <RowDefinition Height="10*" /> <!--List View-->
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" ColumnSpacing="1" Margin="5" BackgroundColor="LightGray"> <!--Search Bar-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" Placeholder="Search products" Text="{Binding Query}"></Entry>
+                <Button Grid.Column="1" Text="Search" Clicked="Search" ></Button>
+                <Button Grid.Column="2" Text="Filter" Clicked="Filter" ></Button>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="5"> <!--List -->
+                <ListView Header="INVENTORY"   ItemsSource="{Binding Products}"  SelectedItem="{Binding SelectedProduct }">
+                    <ListView.ItemTemplate >
+                        <DataTemplate >
+                            <ViewCell >
+                                <Label Text="{Binding}" TextColor="Black" FontAttributes="Italic" ></Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
+
+        <!--Buttons-->
+        <Button x:Name="Button" Text="Add Product by Quantity" Clicked="Clicked_Add_ByQuantity" />
+        <Button Text="Add Product by Weight" Clicked="Clicked_Add_ByWeight" />
+        <Button Text="Edit Inventory" Clicked="Clicked_Edit" />
+        <Button Text="Delete Inventory" Clicked="Clicked_Delete" />
+        <Button Text="Save Inventory" Clicked="Clicked_Save" />
+        <Button Text="Load Inventory" Clicked="Clicked_Load" />
+        <Button Text="Logout" Clicked="Clicked_Logout" />
+
+    </StackLayout>
+</ContentPage>

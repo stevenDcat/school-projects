@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreApp.Pages.MainPage">
+
+    <ContentPage.Resources>
+        <!--Use this to make static customization-->
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition /> <!--Welcome Message-->
+                <RowDefinition /> <!--Username-->
+                <RowDefinition /> <!--Password-->
+                <RowDefinition /> <!--Login-->
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0"> <!--ADD LATER WELCOME!-->
+                <Grid.ColumnDefinitions>
+
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="5" BackgroundColor="LightGray"> <!--Username Prompt -->
+                <Entry Placeholder="E-mail address or Store ID" Text="{Binding Username}" FontSize="Default"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="5" BackgroundColor="LightGray"> <!--Password Prompt -->
+                <Entry Placeholder="Login" IsPassword="True" Text="{Binding Password}" FontSize="Default" />
+            </Grid>
+            <Grid Grid.Row="3" Margin="1"> <!--Login Button -->
+                <Button Text="Login" FontSize="Large" Clicked="Login_Clicked" />
+            </Grid>
+        </Grid>
+    </StackLayout>
+
+
+</ContentPage>

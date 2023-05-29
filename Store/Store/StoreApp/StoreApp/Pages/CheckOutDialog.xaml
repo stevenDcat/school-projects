@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreApp.Pages.CheckOutDialog">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding CheckOut}"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="Large"/>
+            <Button x:Name="PayButton" Text="Confirm Payment and Shipping Information" Clicked="Clicked_Pay" />
+            <Button Text="Cancel" Clicked="Clicked_Back" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreApp.Pages.PaymentDialog">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Shipping Information" TextColor="Black" FontAttributes="Bold"></Label>
+            <Entry Placeholder="First Name" ></Entry>
+            <Entry Placeholder="Last Name" ></Entry>
+            <Entry Placeholder="Street Address" ></Entry>
+            <Entry Placeholder="Apartment / Unit / Suite" ></Entry>
+            <Entry Placeholder="Zip Code" ></Entry>
+            <Entry Placeholder="City" ></Entry>
+            <Entry Placeholder="State" ></Entry>
+            <Entry Placeholder="Email" ></Entry>
+            <Label Text="Payment Information" TextColor="Black" FontAttributes="Bold"></Label>
+            <Entry Placeholder="Card Holder Name " ></Entry>
+            <Entry Placeholder="Card Number" ></Entry>
+            <Entry Placeholder="Card Exp. Date" ></Entry>
+            <StackLayout Orientation="Vertical">
+                <Button Text="Confirm" Clicked="Clicked_Pay" />
+                <Button Text="Cancel" Clicked="Clicked_Back" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
